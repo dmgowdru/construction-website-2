@@ -1,0 +1,544 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Splash Screen */
+#splash {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #807d7d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+
+@keyframes zoomIn {
+  from { transform: scale(1); opacity: 0.7; }
+  to { transform: scale(1.2); opacity: 1; }
+}
+
+.hidden {
+  display: none;
+}
+
+/* Main Content */
+header {
+  background: #999696;
+  color: #332c2c;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header nav a:hover {
+  color: #f4c542;
+}
+
+#hero {
+  background: url("C:\Users\Dell\Desktop\construction-website\POORVI CONSTRUCTION'S LOGO.jpg") center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+section {
+  padding: 50px 20px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.projects-grid img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+footer {
+  background: #111;
+  color: #aaa;
+  text-align: center;
+  padding: 20px;
+}
+
+.logo {
+  width: 120px;       /* size of the logo */
+  height: 120px;
+  border-radius: 50%; /* makes it circular */
+  object-fit: cover;  /* keeps the image proportional */
+  vertical-align: middle;
+  margin-right: 10px; /* space between logo and text */
+}
+
+.whatsapp-icon {
+  width: 150px;
+  height: 50px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+/* Global Font Style */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* About Us Section */
+#about {
+  max-width: 900px;         /* keep text in a readable width */
+  margin: 60px auto;        /* center the section */
+  padding: 20px;
+  background: #f9f9f9;      /* light background for contrast */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#about h2 {
+  font-size: 32px;
+  text-align: center;
+  color: #222;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+#about p {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 15px;
+  text-align: justify;      /* makes it neat */
+}
+
+/* Services Section */
+#services {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f9f9f9;
+}
+
+#services h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+/* Grid Layout */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Service Card */
+.service-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Hover Effect */
+.service-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+}
+
+/* Icon Styling */
+.service-card .icon {
+  font-size: 40px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+/* Animation when visible */
+.service-card.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s ease;
+}
+
+#contact {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f0f9ff, #ffffff);
+}
+
+#contact h2 {
+  font-size: 34px;
+  margin-bottom: 40px;
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.contact-icon {
+  font-size: 38px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.contact-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.contact-card p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.contact-card a {
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: 500;
+}
+
+.contact-card a:hover {
+  text-decoration: underline;
+}
+
+/* WhatsApp icon inside card */
+.whatsapp-icon {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  z-index: 100;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+footer {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #fff;
+  padding: 50px 20px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: left;
+}
+
+.footer-about h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.footer-about p {
+  font-size: 14px;
+  color: #ddd;
+}
+
+.footer-links h4,
+.footer-contact h4,
+.footer-social h4 {
+  margin-bottom: 12px;
+  font-size: 18px;
+  color: #ffdd57;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+  text-decoration: none;
+  color: #ddd;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #ffdd57;
+}
+
+.footer-contact p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.footer-social a img {
+  width: 28px;
+  height: 28px;
+  margin-right: 12px;
+  transition: transform 0.3s ease;
+  filter: brightness(0) invert(1);
+}
+
+.footer-social a img:hover {
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 30px;
+  font-size: 14px;
+  color: #ddd;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* HEADER */
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(6px);
+  padding: 12px 40px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.header h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1.5px;
+}
+
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: #ffb400;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffb400;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* HERO */
+#hero {
+  height: 70vh; /* reduced from 100vh */
+  background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), 
+              url("images/construction-bg.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+  animation: fadeIn 1.5s ease;
+}
+
+.hero-content {
+  max-width: 700px; /* slightly narrower */
+  animation: slideUp 1.5s ease;
+}
+
+.hero-content h2 {
+  font-size: 38px; /* smaller */
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 16px; /* smaller text */
+  line-height: 1.5;
+  margin-bottom: 25px;
+  color: #e5e5e5;
+}
+
+/* Projects Section */
+#projects {
+  padding: 80px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+#projects h2 {
+  font-size: 36px;
+  margin-bottom: 50px;
+  color: #222;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+}
+
+#projects h2::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: #f39c12; /* accent color */
+  display: block;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+.project-card:hover img {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  padding: 12px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s ease;
+}
+
+.project-card:hover .overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
